@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.16)
+project(Rectangle_Detection LANGUAGES CXX)
+
+add_compile_options(-finput-charset=UTF-8 -fexec-charset=GBK)
+find_package(OpenCV REQUIRED)
+include_directories(${OpenCV_INCLUDE_DIRS})
+set(SRC_LIST main.cpp)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+MESSAGE(STATUS "This is BINARY dir " ${Rectangle_Detection_BINARY_DIR})
+MESSAGE(STATUS "This is SOURCE dir " ${Rectangle_Detection_SOURCE_DIR})
+ADD_EXECUTABLE(Rectangle_Detection ${SRC_LIST})
+target_link_libraries(Rectangle_Detection ${OpenCV_LIBS})
